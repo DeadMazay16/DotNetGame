@@ -41,14 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="Base\GameObject.cs"/>
-      <Compile Include="Base\Core.cs"/>
+    <Compile Include="Base\GameObject.cs" />
+    <Compile Include="Base\Core.cs" />
+    <Compile Include="Base\Item.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Creatures"/>
-        <Folder Include="Items"/>
-    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Creatures" />
+    <Folder Include="Creatures" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
