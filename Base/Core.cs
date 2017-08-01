@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetGame
 {
-    internal class Program
+    internal class Core
     {
         public static void Main(string[] args)
         {
