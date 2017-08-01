@@ -2,13 +2,13 @@
 {
     public class Item:GameObject 
     {
-        private float weight;
-        private int numberOfSlots;
+        public float Weight { get; }
+        public int NumberOfSlots { get; }
 
         public Item(string name, float weight, int numberOfSlots) : base(name)
         {
-            this.weight = weight;
-            this.numberOfSlots = numberOfSlots;
+            this.Weight = weight;
+            this.NumberOfSlots = numberOfSlots;
         }
     }
 }
