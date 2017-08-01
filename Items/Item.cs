@@ -1,5 +1,6 @@
 ﻿namespace DotNetGame.Items
 {
+    // Юзай Alt + Enter
     public class Item:GameObject 
     {
         public float Weight { get; }
