@@ -1,4 +1,6 @@
-﻿namespace DotNetGame.Interfeses
+﻿using DotNetGame.Items.Equipment;
+
+namespace DotNetGame.Interfeses
 {
     public interface IIntelligent
     {

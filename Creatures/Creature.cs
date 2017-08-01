@@ -31,8 +31,12 @@ namespace DotNetGame.Creatures
         //Координаты существа в мире.
         private int x, y;
         
-        public Creature(World world, string name, int hp, Inventory inventory) : base(name)
+        public Creature(World world, string name, int hp, Inventory inventory, int x, int y) : base(name)
         {
+            //При создании добавляем существо в локацию, в которой он был создан
+            world.getLocation(x, y).addMember(this);
+            
+            log = new List<string>();
             this.alive = true;
             this.inventory = inventory;
             maxHp = hp;

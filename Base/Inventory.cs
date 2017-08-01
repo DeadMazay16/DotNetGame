@@ -17,6 +17,7 @@ namespace DotNetGame
 
         public Inventory(float maxWeight, int numberOfSlots, Creature owner)
         {
+            inventory = new List<Item>();
             this.maxWeight = maxWeight;
             this.numberOfSlots = numberOfSlots;
             this.currentWeight = 0;
