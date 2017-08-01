@@ -14,9 +14,9 @@ namespace DotNetGame.Items.Equipment
         }
 
         //получение баффов и дебаффов при надевании шмотки 
-        protected abstract void equipd();
+        protected abstract void equiped();
 
         //отключение баффов и дебаффов при снятии шмотки
-        protected abstract void unEquipd();
+        protected abstract void unequiped();
     }
 }
