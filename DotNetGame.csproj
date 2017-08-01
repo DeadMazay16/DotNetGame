@@ -45,6 +45,7 @@
     <Compile Include="Base\Core.cs" />
     <Compile Include="Base\Location.cs"/>
     <Compile Include="Base\World.cs"/>
+    <Compile Include="Base\Inventory.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Interfeses\IIntelligent.cs" />
     <Compile Include="Items\Item.cs" />
