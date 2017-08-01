@@ -4,8 +4,13 @@ using System.Runtime.Remoting.Messaging;
 
 namespace DotNetGame
 {
-    internal class Core
+    public static class Core
     {
+        public static void out_message(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+        
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello, world!");
