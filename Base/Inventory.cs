@@ -9,19 +9,25 @@ namespace DotNetGame
     {
         public float maxWeight { get; } //максимально возможный переносимый вес
         public int numberOfSlots { get;  } //количество слотов в инвентаре
-        public Creature owner { get; } //владелец текущего инвентаря 
+        public Creature owner { get; private set; } //владелец текущего инвентаря 
         private List<Item> inventory; //список предметов в инвентаре 
         public float currentWeight { get; private set; } //текущий вес груза
         public int numberOfBusySlots { get; private set;  } //количество занятых слотов 
         
-
-        public Inventory(float maxWeight, int numberOfSlots, Creature owner)
+        
+        //TODO: Переделать НАХУЙ
+        public Inventory(float maxWeight, int numberOfSlots)
         {
             inventory = new List<Item>();
             this.maxWeight = maxWeight;
             this.numberOfSlots = numberOfSlots;
             this.currentWeight = 0;
             this.numberOfBusySlots = 0;
+            this.owner = null;
+        }
+
+        public void assignOwner(Creature owner)
+        {
             this.owner = owner;
         }
         

@@ -25,8 +25,6 @@ namespace DotNetGame.Creatures
         private int maxHp;
         private World world;
         private Inventory inventory;
-
-        
         
         //Координаты существа в мире.
         private int x, y;
@@ -77,7 +75,52 @@ namespace DotNetGame.Creatures
             {
                 addToLog(e.Message);
             }
+        }
+
+        private void go(int x, int y)
+        {
+            if (x > world.SIZE_X || y > world.SIZE_Y || x < 0 || y < 0)
+            {
+                throw new Exception("Не удалось перейти в локацию");
+            }
+            else
+            {
+                world.getLocation(this.x, this.y).removeMember(this);
             
+                this.x = x;
+                this.y = y;
+            
+                world.getLocation(this.x, this.y).addMember(this);
+            
+                addToLog("Перешел в локацию (" + x + ", " + y + ")" );
+            }
+            
+        }
+
+        public void gotoLocation(string direction)
+        {
+            try
+            {
+                switch (direction)
+                {
+                    case "up":
+                        go(x, y + 1);
+                        break;
+                    case "down":
+                        go(x, y - 1);
+                        break;
+                    case "left":
+                        go(x - 1, y);
+                        break;
+                    case "right":
+                        go(x + 1, y);
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                addToLog("Не удалось перейти в локацию");
+            }
         }
     }
 }

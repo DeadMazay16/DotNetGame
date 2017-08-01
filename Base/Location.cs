@@ -43,5 +43,15 @@ namespace DotNetGame
         {
             items.Add(item);
         }
+
+        public void removeItem(Item item)
+        {
+            items.Remove(item);
+        }
+
+        public void removeMember(Creature creature)
+        {
+            members.Remove(creature);
+        }
     }
 }
