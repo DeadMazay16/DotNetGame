@@ -12,10 +12,11 @@ namespace DotNetGame
         public Creature owner { get; } //владелец текущего инвентаря 
         private List<Item> inventory; //список предметов в инвентаре 
         public float currentWeight { get; private set; } //текущий вес груза
-        public int numberOfBusySlots { get; private set;  } //количество загятых слотов 
+        public int numberOfBusySlots { get; private set;  } //количество занятых слотов 
         
 
-        public Inventory(float maxWeight, int numberOfSlots, Creature owner){
+        public Inventory(float maxWeight, int numberOfSlots, Creature owner)
+        {
             this.maxWeight = maxWeight;
             this.numberOfSlots = numberOfSlots;
             this.currentWeight = 0;
@@ -28,7 +29,7 @@ namespace DotNetGame
         {
             if ((numberOfBusySlots + item.NumberOfSlots > numberOfSlots) || (currentWeight + item.Weight > maxWeight))
             {
-                throw new Exception("Какаха");
+                throw new Exception(numberOfBusySlots + item.NumberOfSlots > numberOfSlots?"Предмет занимает слишком много слотов":"Предмет имеет слишком большой вес");
             }
             else
             {
@@ -49,7 +50,7 @@ namespace DotNetGame
             }
             else
             {
-                throw new Exception("Какаха");
+                throw new Exception("В этом инвентаре нет такого предмета");
             }
         }
     }
