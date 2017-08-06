@@ -10,16 +10,6 @@ namespace DotNetGame.Creatures
         //Лог событий
         private List<string> log;
 
-        public string[] getLog()
-        {
-            return log.ToArray();
-        }
-
-        public void addToLog(string msg)
-        {
-            log.Add(msg);
-        }
-
         private bool alive;
         public int Hp { get; private set; }
         private int maxHp;
@@ -42,6 +32,16 @@ namespace DotNetGame.Creatures
             this.world = world;
         }
         
+        public string[] getLog()
+        {
+            return log.ToArray();
+        }
+
+        public void addToLog(string msg)
+        {
+            log.Add(msg);
+        }
+
         //Базовое получение урона
         public void takeDamage(int damage)
         {

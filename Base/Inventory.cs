@@ -14,23 +14,6 @@ namespace DotNetGame
         public float currentWeight { get; private set; } //текущий вес груза
         public int numberOfBusySlots { get; private set;  } //количество занятых слотов 
         
-        
-        //TODO: Переделать НАХУЙ
-        public Inventory(float maxWeight, int numberOfSlots)
-        {
-            inventory = new List<Item>();
-            this.maxWeight = maxWeight;
-            this.numberOfSlots = numberOfSlots;
-            this.currentWeight = 0;
-            this.numberOfBusySlots = 0;
-            this.owner = null;
-        }
-
-        public void assignOwner(Creature owner)
-        {
-            this.owner = owner;
-        }
-        
         //функция кладет предмет в инвентарь, а если не может, то кидает какаху
         public void add(Item item) 
         {
@@ -46,8 +29,8 @@ namespace DotNetGame
             }
         }
         
-        //функция кидает предмет из инвентаря, а если его там нет, то кидает какаху
-        public void drop(Item item)
+        //функция удаляет предмет из инвентаря, а если его там нет, то кидает какаху
+        public void remove(Item item)
         {
             if (inventory.Contains(item))
             {
@@ -59,6 +42,11 @@ namespace DotNetGame
             {
                 throw new Exception("В этом инвентаре нет такого предмета");
             }
+        }
+
+        public Item get(int item)
+        {
+            return inventory[item];
         }
     }
 }
