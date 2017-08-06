@@ -47,14 +47,13 @@
     <Compile Include="Base\World.cs" />
     <Compile Include="Base\Inventory.cs" />
     <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Hero\Hero.cs" />
     <Compile Include="Interfeses\IIntelligent.cs" />
     <Compile Include="Items\Equipment\Equipment.cs" />
+    <Compile Include="Items\Equipment\Weapon\SharpWeapon\Sward.cs" />
     <Compile Include="Items\Equipment\Weapon\Weapon.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Creatures" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

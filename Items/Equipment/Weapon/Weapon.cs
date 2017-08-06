@@ -5,8 +5,11 @@ namespace DotNetGame.Items.Equipment.Weapon
 {
     public abstract class Weapon:Equipment
     {
-        protected Weapon(string name, float weight, int numberOfSlots, IIntelligent owner, string type, int quality, int level) : base(name, weight, numberOfSlots, "weapon", owner, type, quality, level)
+        protected string damageType;
+
+        protected Weapon(string name, float weight, int numberOfSlots, IIntelligent owner, string type, int quality, int level, string damageType) : base(name, weight, numberOfSlots, "weapon", owner, type, quality, level)
         {
+            this.damageType = damageType;
         }
 
         protected abstract override void equiped();

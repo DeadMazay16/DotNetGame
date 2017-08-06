@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using DotNetGame.Creatures;
+using DotNetGame.Creatures.Hero;
 
 namespace DotNetGame
 {
@@ -14,13 +16,14 @@ namespace DotNetGame
         
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, world!");
+            out_message("This shit kicked off");
+            
             World world = new World(100, 100);
             world.init();
             
             var d_inv = new Inventory(100, 100);
             
-            Creature hero = new Creature(world, "Vasya", 100, d_inv, 0, 0);
+            Hero hero = new Hero(world, "Vasya", 100, d_inv, 0, 0);
             
             d_inv.assignOwner(hero);
             
